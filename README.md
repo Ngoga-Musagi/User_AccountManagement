@@ -4,7 +4,7 @@ This is the User Account Management
 - it manages user data at orders of magnitude of scale
 
 This Repository comprised with two project
-    - UserAccountManagement
+    - UserAccountManagement And
     -user-app
     
  user -app user ribbon-netflix dependecy for load balancing
