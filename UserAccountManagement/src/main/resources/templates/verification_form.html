@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Sign_Up </title>
+<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container text-center">
+<div>
+<h1>User Account Verification Form</h1>
+</div>
+<form th:action="@{/upload}" enctype="multipart/form-data" method="post"
+ style="max-width: 600px; margin: 0 auto;"
+ th:object="${user}">
+ 
+ <div>
+  <p>E-mail: <b>[[${#request.userPrincipal.principal.username}]]</b></p>
+   <div class="m-3">
+ 
+ <div class="form-group row">
+ <label class="col-form-label col-4" >E-mail</label>
+ <div class="col-8">
+ <input type="email" class="form-control" th:field="*{email}" required />
+ </div>
+ </div>
+ <div class="form-group row">
+ <label class="col-form-label col-4" >National ID/ Passport</label>
+ <div class="col-8">
+ <input type="text" class="form-control"  th:field="*{nid}" name="nid" required />
+ </div>
+ </div>
+ 
+ <div class="form-group row">
+ <label class="col-form-label col-4" >Upload Image</label>
+ <div class="col-8">
+ <input type="file"  name="image" accept="image/*" class="form-control-file">
+ </div>
+ </div>
+ <p >
+ </p>
+ <div>
+  <button type="submit" class="btn btn-primary">Confirm</button>
+ </div>
+ </div>
+
+</form>
+</div>
+</body>
+</html>
